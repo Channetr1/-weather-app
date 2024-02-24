@@ -1,0 +1,23 @@
+import random
+
+class WeatherSimulator:
+    def __init__(self):
+        self.temperature = 25  # Initial temperature
+
+    def change_weather(self):
+        # Simulate sudden weather changes
+        if random.random() < 0.3:  # 30% chance of weather change
+            self.temperature += random.randint(-5, 5)  # Random temperature change between -5 to 5 degrees
+
+    def get_temperature(self):
+        return self.temperature
+
+# Example usage
+if __name__ == "__main__":
+    simulator = WeatherSimulator()
+    print("Initial Temperature:", simulator.get_temperature())
+    
+    # Simulate sudden weather changes for 10 iterations
+    for _ in range(10):
+        simulator.change_weather()
+        print("Temperature after weather change:", simulator.get_temperature())
